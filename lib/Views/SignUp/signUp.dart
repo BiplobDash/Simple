@@ -157,7 +157,7 @@ class SignUp extends StatelessWidget {
                                       AppStyle().failedAlert(context, error);
                                     },
                                     (success) {
-                                      AppStyle().successAlert(context, success);
+                                      AppStyle().successAlert(context, 'Created Successfully');
                                     },
                                   );
                                 }

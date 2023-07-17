@@ -159,7 +159,7 @@ class SignIn extends StatelessWidget {
                                   result.fold((error) {
                                     AppStyle().failedAlert(context, error);
                                   }, (success) {
-                                    AppStyle().successAlert(context, success);
+                                    AppStyle().successAlert(context, "Login Successfully");
                                   });
                                 }
                               })),

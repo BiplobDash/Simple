@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:better_half/Views/SignUp/getData.dart';
 import 'package:better_half/Views/SignUp/signIn.dart';
 import 'package:better_half/Views/SignUp/signUpVerification.dart';
 import 'package:better_half/style/appStyle.dart';
@@ -117,7 +118,7 @@ class AuthProvider extends ChangeNotifier {
         final jsonData = jsonDecode(response.body);
         if (jsonData['status'] == 200) {
           Navigator.push(context,
-              CupertinoPageRoute(builder: (_) => SignUpVerification()));
+              CupertinoPageRoute(builder: (_) => GetData()));
           return right(unit);
         } else {
           final errorData = jsonData['error'];
