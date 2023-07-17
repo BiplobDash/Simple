@@ -8,6 +8,8 @@ class PostHelper {
     if (response.statusCode == 200) {
       var data = response.body;
       return postFromJson(data);
+    }else {
+      throw Exception('Failed to fetch posts');
     }
   }
 }
