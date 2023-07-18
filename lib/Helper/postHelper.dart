@@ -1,15 +1,32 @@
-import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 import 'package:better_half/Model/postModel.dart';
+import 'package:http/http.dart' as http;
 
 class PostHelper {
-  Future<List<Post>?> getPosts() async {
-    var response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
-    if (response.statusCode == 200) {
-      var data = response.body;
-      return postFromJson(data);
-    }else {
-      throw Exception('Failed to fetch posts');
+  Future<List<Post>> getData() async {
+    List<Post> listData = [];
+    try {
+      var request = http.Request(
+          'GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+
+      http.StreamedResponse response = await request.send();
+
+      if (response.statusCode == 200) {
+        var rawData = await response.stream.bytesToString();
+        List<dynamic> data = jsonDecode(rawData);
+        data.forEach((element) {
+          Post model = Post.fromJson(element);
+          listData.add(model);
+        });
+        return listData;
+      } else {
+        print(response.reasonPhrase);
+        return [];
+      }
+    } catch (e) {
+      print('Exception in $e');
+      throw e;
     }
   }
 }

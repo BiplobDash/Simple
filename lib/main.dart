@@ -10,7 +10,7 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_)=> CheckboxProvider()),
     ChangeNotifierProvider(create: (_)=> AuthProvider()),
-    ChangeNotifierProvider(create: (_)=> postProvider())
+    ChangeNotifierProvider(create: (_)=> postProvider()),
   ],child: const MyApp()));
 }
 

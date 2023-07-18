@@ -1,5 +1,6 @@
 import 'package:better_half/Provider/Authentication/authProvider.dart';
 import 'package:better_half/Provider/screenProvider.dart';
+import 'package:better_half/Views/SignUp/getData.dart';
 import 'package:better_half/Views/SignUp/reset.dart';
 import 'package:better_half/Views/SignUp/signUp.dart';
 import 'package:better_half/Widgets/custom_text.dart';
@@ -150,18 +151,22 @@ class SignIn extends StatelessWidget {
                               width: 350,
                               height: 50,
                               child: CustomButton("Sign In", () async {
-                                if (_formKey.currentState!.validate() &&
-                                    checkboxProvider.isChecked == true) {
-                                  final result = await authProvider.UserSignIn(
-                                      _emailController.text,
-                                      _passwordController.text,
-                                      context);
-                                  result.fold((error) {
-                                    AppStyle().failedAlert(context, error);
-                                  }, (success) {
-                                    AppStyle().successAlert(context, "Login Successfully");
-                                  });
-                                }
+                                // if (_formKey.currentState!.validate() &&
+                                //     checkboxProvider.isChecked == true) {
+                                //   final result = await authProvider.UserSignIn(
+                                //       _emailController.text,
+                                //       _passwordController.text,
+                                //       context);
+                                //   result.fold((error) {
+                                //     AppStyle().failedAlert(context, error);
+                                //   }, (success) {
+                                //     AppStyle().successAlert(context, "Login Successfully");
+                                //   });
+                                // }
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (_) => GetData()));
                               })),
                         ),
                         Padding(
