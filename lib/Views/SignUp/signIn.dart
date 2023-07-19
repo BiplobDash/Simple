@@ -65,19 +65,23 @@ class SignIn extends StatelessWidget {
                             height: 39,
                           ),
                         ),
-                        Text(
-                          AppString.sign1,
-                          style: GoogleFonts.poppins(
-                              fontSize: 22,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400),
+                        Center(
+                          child: Text(
+                            AppString.sign1,
+                            style: GoogleFonts.poppins(
+                                fontSize: 22,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400),
+                          ),
                         ),
-                        Text(
-                          AppString.sign2,
-                          style: GoogleFonts.poppins(
-                              fontSize: 22,
-                              color: AppColor.primaryColor,
-                              fontWeight: FontWeight.w700),
+                        Center(
+                          child: Text(
+                            AppString.sign2,
+                            style: GoogleFonts.poppins(
+                                fontSize: 22,
+                                color: AppColor.primaryColor,
+                                fontWeight: FontWeight.w700),
+                          ),
                         ),
                         customFormField(TextInputType.emailAddress,
                             _emailController, context, "Email or phone", (val) {
@@ -172,6 +176,7 @@ class SignIn extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 width: 151,

@@ -67,6 +67,11 @@ class SignUpVerification extends StatelessWidget {
                       width: 50,
                       color: AppColor.stroke,
                       child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         controller: _num1,
@@ -81,6 +86,11 @@ class SignUpVerification extends StatelessWidget {
                       width: 50,
                       color: AppColor.stroke,
                       child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         controller: _num2,
@@ -95,6 +105,11 @@ class SignUpVerification extends StatelessWidget {
                       width: 50,
                       color: AppColor.stroke,
                       child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         controller: _num3,
@@ -109,6 +124,11 @@ class SignUpVerification extends StatelessWidget {
                       width: 50,
                       color: AppColor.stroke,
                       child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         controller: _num4,
@@ -123,6 +143,11 @@ class SignUpVerification extends StatelessWidget {
                       width: 50,
                       color: AppColor.stroke,
                       child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
                         controller: _num5,
@@ -172,7 +197,8 @@ class SignUpVerification extends StatelessWidget {
                       result.fold((error) {
                         AppStyle().failedAlert(context, error);
                       }, (success) {
-                        AppStyle().successAlert(context, 'Verifcation Successfully');
+                        AppStyle()
+                            .successAlert(context, 'Verifcation Successfully');
                       });
                     })),
               )

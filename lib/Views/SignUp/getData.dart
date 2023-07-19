@@ -3,7 +3,9 @@ import 'package:better_half/Model/postModel.dart';
 import 'package:better_half/Provider/postProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 class GetData extends StatefulWidget {
+  
   @override
   State<GetData> createState() => _GetDataState();
 }

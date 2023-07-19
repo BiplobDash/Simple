@@ -16,3 +16,15 @@ class CheckboxProvider extends ChangeNotifier {
     isChecked = newValue ?? false;
   }
 }
+
+
+// Gender Provider
+class OptionsProvider with ChangeNotifier {
+  List<String> options = ['Male', 'Female'];
+  String currentOption = 'Male';
+
+  void updateCurrentOption(String value) {
+    currentOption = value;
+    notifyListeners();
+  }
+}
