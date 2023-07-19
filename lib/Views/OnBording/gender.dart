@@ -85,14 +85,14 @@ class Gender extends StatelessWidget {
                     },
                   )),
                   Expanded(
-                    child: RadioListTile(
-                          title: Text('Female'),
-                          value: optionProvider.options[1],
-                          groupValue: optionProvider.currentOption,
-                          onChanged: (value) {
-                            optionProvider.updateCurrentOption(value.toString());
-                          },
-                        )),
+                      child: RadioListTile(
+                    title: Text('Female'),
+                    value: optionProvider.options[1],
+                    groupValue: optionProvider.currentOption,
+                    onChanged: (value) {
+                      optionProvider.updateCurrentOption(value.toString());
+                    },
+                  )),
                 ],
               ),
             ),

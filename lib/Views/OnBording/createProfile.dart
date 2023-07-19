@@ -1,3 +1,4 @@
+import 'package:better_half/Route/route_names.dart';
 import 'package:better_half/Views/OnBording/gender.dart';
 import 'package:better_half/Widgets/custom_button.dart';
 import 'package:better_half/const/app_color.dart';
@@ -93,7 +94,7 @@ class CreateProfile extends StatelessWidget {
                   width: 350,
                   height: 50,
                   child: CustomButton('Complete Profile', () {
-                    Navigator.push(context, CupertinoPageRoute(builder: (_) => Gender()));
+                    Navigator.pushNamed(context, RouteName.gender);
                   })),
             )
           ],
