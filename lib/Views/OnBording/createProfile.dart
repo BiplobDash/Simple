@@ -1,6 +1,8 @@
+import 'package:better_half/Views/OnBording/gender.dart';
 import 'package:better_half/Widgets/custom_button.dart';
 import 'package:better_half/const/app_color.dart';
 import 'package:better_half/const/app_string.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -90,8 +92,9 @@ class CreateProfile extends StatelessWidget {
               child: SizedBox(
                   width: 350,
                   height: 50,
-                  child: CustomButton(
-                      'Complete Profile', () {})),
+                  child: CustomButton('Complete Profile', () {
+                    Navigator.push(context, CupertinoPageRoute(builder: (_) => Gender()));
+                  })),
             )
           ],
         ),
