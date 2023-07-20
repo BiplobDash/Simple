@@ -8,11 +8,12 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignInVerification extends StatelessWidget {
-  TextEditingController _number1 = TextEditingController();
-  TextEditingController _number2 = TextEditingController();
-  TextEditingController _number3 = TextEditingController();
-  TextEditingController _number4 = TextEditingController();
-  TextEditingController _number5 = TextEditingController();
+  
+  final TextEditingController _number1 = TextEditingController();
+  final TextEditingController _number2 = TextEditingController();
+  final TextEditingController _number3 = TextEditingController();
+  final TextEditingController _number4 = TextEditingController();
+  final TextEditingController _number5 = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 

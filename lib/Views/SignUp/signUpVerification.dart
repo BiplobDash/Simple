@@ -9,11 +9,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class SignUpVerification extends StatelessWidget {
-  TextEditingController _num1 = TextEditingController();
-  TextEditingController _num2 = TextEditingController();
-  TextEditingController _num3 = TextEditingController();
-  TextEditingController _num4 = TextEditingController();
-  TextEditingController _num5 = TextEditingController();
+  final TextEditingController _num1 = TextEditingController();
+  final TextEditingController _num2 = TextEditingController();
+  final TextEditingController _num3 = TextEditingController();
+  final TextEditingController _num4 = TextEditingController();
+  final TextEditingController _num5 = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override

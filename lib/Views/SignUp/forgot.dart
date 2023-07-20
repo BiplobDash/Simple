@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Forgot extends StatelessWidget {
-  TextEditingController _password = TextEditingController();
-  TextEditingController _confirmPass = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _confirmPass = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -54,7 +54,7 @@ class Forgot extends StatelessWidget {
                     "Password", (val) {},
                     suffixIcon: Icons.remove_red_eye_outlined),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Padding(
@@ -63,7 +63,7 @@ class Forgot extends StatelessWidget {
                     context, "Confirm Password", (val) {},
                     suffixIcon: Icons.remove_red_eye_outlined),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 85,
               ),
               Padding(

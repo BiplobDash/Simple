@@ -14,15 +14,15 @@ import 'package:provider/provider.dart';
 import '../../../widgets/custom_button.dart';
 
 class SignUp extends StatelessWidget {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    CheckboxProvider checkboxProvider = Provider.of<CheckboxProvider>(context);
+    CheckboxProvider checkboxProvider = Provider.of<CheckboxProvider>(context, listen: false);
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
@@ -124,12 +124,14 @@ class SignUp extends StatelessWidget {
                         }, suffixIcon: Icons.remove_red_eye_outlined),
                         Row(
                           children: [
-                            Checkbox(
-                              value: checkboxProvider.isChecked,
-                              onChanged: (bool? newValue) {
-                                checkboxProvider.toggleCheckbox(newValue);
-                              },
-                            ),
+                            Consumer<CheckboxProvider>(builder: ((context, value, child) {
+                              return Checkbox(
+                                value: value.isChecked,
+                                onChanged: (bool? newValue) {
+                                  value.toggleCheckbox(newValue);
+                                },
+                              );
+                            })),
                             Text(
                               AppString.signup3,
                               style: GoogleFonts.poppins(
@@ -157,7 +159,8 @@ class SignUp extends StatelessWidget {
                                       AppStyle().failedAlert(context, error);
                                     },
                                     (success) {
-                                      AppStyle().successAlert(context, 'Created Successfully');
+                                      AppStyle().successAlert(
+                                          context, 'Created Successfully');
                                     },
                                   );
                                 }

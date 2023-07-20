@@ -1,7 +1,7 @@
 import 'package:better_half/Provider/screenProvider.dart';
+import 'package:better_half/Views/OnBording/name_screen.dart';
 import 'package:better_half/Widgets/custom_button.dart';
 import 'package:better_half/const/app_color.dart';
-import 'package:better_half/const/app_string.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +11,7 @@ class Gender extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final optionProvider = Provider.of<OptionsProvider>(context);
+    final optionProvider = Provider.of<OptionsProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -75,22 +75,28 @@ class Gender extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                      child: RadioListTile(
-                    title: Text('Male'),
-                    value: optionProvider.options[0],
-                    groupValue: optionProvider.currentOption,
-                    onChanged: (value) {
-                      optionProvider.updateCurrentOption(value.toString());
+                  Expanded(child: Consumer<OptionsProvider>(
+                    builder: (context, value, child) {
+                      return RadioListTile(
+                        title: const Text('Male'),
+                        value: value.options[0],
+                        groupValue: value.currentOption,
+                        onChanged: (updateValue) {
+                          value.updateCurrentOption(updateValue.toString());
+                        },
+                      );
                     },
                   )),
-                  Expanded(
-                      child: RadioListTile(
-                    title: Text('Female'),
-                    value: optionProvider.options[1],
-                    groupValue: optionProvider.currentOption,
-                    onChanged: (value) {
-                      optionProvider.updateCurrentOption(value.toString());
+                  Expanded(child: Consumer<OptionsProvider>(
+                    builder: (context, value, child) {
+                      return RadioListTile(
+                        title: const Text('Female'),
+                        value: value.options[1],
+                        groupValue: value.currentOption,
+                        onChanged: (updateValue) {
+                          value.updateCurrentOption(updateValue.toString());
+                        },
+                      );
                     },
                   )),
                 ],
@@ -105,7 +111,12 @@ class Gender extends StatelessWidget {
                   width: 350,
                   height: 50,
                   child: CustomButton('Continue', () {
-                    
+                    print(optionProvider.currentOption);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => NameScreen(
+                                gender: optionProvider.currentOption)));
                   })),
             )
           ],

@@ -15,8 +15,8 @@ import 'package:provider/provider.dart';
 import '../../../widgets/custom_button.dart';
 
 class SignIn extends StatelessWidget {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -25,7 +25,7 @@ class SignIn extends StatelessWidget {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
-      backgroundColor: Color(0xFFF3F2F8),
+      backgroundColor: const Color(0xFFF3F2F8),
       body: SafeArea(
         child: Column(
           children: [
@@ -124,7 +124,7 @@ class SignIn extends StatelessWidget {
                                       style: GoogleFonts.poppins(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w400,
-                                        color: Color(0xFF595567),
+                                        color: const Color(0xFF595567),
                                       ),
                                     )),
                               )
