@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 // SignIn checkbox Provider
 class CheckboxProvider extends ChangeNotifier {
   bool _isChecked = false;
@@ -17,7 +16,6 @@ class CheckboxProvider extends ChangeNotifier {
   }
 }
 
-
 // Gender Provider
 class OptionsProvider with ChangeNotifier {
   List<String> options = ['Male', 'Female'];
@@ -25,6 +23,18 @@ class OptionsProvider with ChangeNotifier {
 
   void updateCurrentOption(String value) {
     currentOption = value;
+    notifyListeners();
+  }
+}
+
+// Birthday Provider
+class BirthDateProvider extends ChangeNotifier {
+  DateTime date = DateTime(2000, 1, 1);
+
+  DateTime get selectedDate => date;
+
+  void updateDate(DateTime newDate) {
+    date = newDate;
     notifyListeners();
   }
 }

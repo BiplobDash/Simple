@@ -3,6 +3,8 @@ import 'package:better_half/Provider/postProvider.dart';
 import 'package:better_half/Provider/screenProvider.dart';
 import 'package:better_half/Route/route_names.dart';
 import 'package:better_half/Route/routes.dart';
+import 'package:better_half/Views/BottomBar/bottom_nav_provider.dart';
+import 'package:better_half/Views/BottomBar/bottom_navigation.dart';
 import 'package:better_half/Views/OnBording/createProfile.dart';
 import 'package:better_half/const/app_string.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,9 @@ void main() {
     ChangeNotifierProvider(create: (_)=> CheckboxProvider()),
     ChangeNotifierProvider(create: (_)=> AuthProvider()),
     ChangeNotifierProvider(create: (_)=> postProvider()),
-    ChangeNotifierProvider(create: (_) => OptionsProvider())
+    ChangeNotifierProvider(create: (_) => OptionsProvider()),
+    ChangeNotifierProvider(create: (_) => BottomNavigationProvider()),
+    ChangeNotifierProvider(create: (_)=> BirthDateProvider()),
   ],child: const MyApp()));
 }
 

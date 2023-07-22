@@ -1,4 +1,5 @@
 import 'package:better_half/Route/route_names.dart';
+import 'package:better_half/Views/BottomBar/bottom_navigation.dart';
 import 'package:better_half/Views/OnBording/createProfile.dart';
 import 'package:better_half/Views/OnBording/gender.dart';
 import 'package:better_half/Views/SignUp/signIn.dart';
@@ -10,6 +11,9 @@ class Routes {
       case RouteName.profile:
         return MaterialPageRoute(
             builder: (BuildContext context) => const CreateProfile());
+      case RouteName.bottom:
+        return MaterialPageRoute(
+            builder: (BuildContext context) =>  BottomNavBar());
       case RouteName.gender:
         return MaterialPageRoute(
             builder: (BuildContext context) => const Gender());

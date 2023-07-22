@@ -9,4 +9,5 @@ class RouteName {
   static const String loginVerification = 'login-verification-screen';
   static const String profile = 'profile-screen';
   static const String gender = 'gender-screen';
+  static const String bottom = 'bottom-screen';
 }

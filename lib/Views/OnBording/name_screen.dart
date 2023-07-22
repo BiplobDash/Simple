@@ -1,3 +1,4 @@
+import 'package:better_half/Views/OnBording/date_of_birth.dart';
 import 'package:better_half/Widgets/custom_button.dart';
 import 'package:better_half/Widgets/custom_text.dart';
 import 'package:better_half/const/app_color.dart';
@@ -6,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NameScreen extends StatelessWidget {
-  
   String gender;
   NameScreen({super.key, required this.gender});
 
@@ -97,7 +97,7 @@ class NameScreen extends StatelessWidget {
                     width: 350,
                     height: 50,
                     child: CustomButton('Continue', () {
-                     
+                      Navigator.push(context, CupertinoPageRoute(builder: (_)=> BirthDayScreen(gender: gender, fname: _firstName.text, lname: _lastName.text)));
                     })),
               )
             ],
